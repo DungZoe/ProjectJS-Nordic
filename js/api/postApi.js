@@ -1,13 +1,13 @@
 import axiosClient from "./axiosClient.js";
 
-const studentApi = {
+const postApi = {
   getAll(params) {
     const url = "/posts";
     return axiosClient.get(url, { params });
   },
 
-  get(studentId) {
-    const url = `/posts/${studentId}`;
+  get(postId) {
+    const url = `/posts/${postId}`;
     return axiosClient.get(url);
   },
 
@@ -27,4 +27,4 @@ const studentApi = {
   },
 };
 
-export default studentApi;
+export default postApi;
