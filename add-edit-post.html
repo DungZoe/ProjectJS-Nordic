@@ -42,7 +42,7 @@
           </li>
 
           <li class="nav-item">
-            <a id="goToDetailPageLink" class="nav-link" href="#"></a>
+            <a class="nav-link" href="post-detail.html"><i class="fas fa-check-square"></i> Detail page</a>
           </li>
         </ul>
       </div>
@@ -66,13 +66,13 @@
           <form id="postForm" class="post-form">
             <div class="form-group">
               <label for="postTitle">Title</label>
-              <input type="text" class="form-control" id="postTitle" placeholder="Eg: Homemade fried chicken with specific spices">
+              <input required type="text" class="form-control" id="postTitle" placeholder="Eg: Today is a present">
               <div class="invalid-feedback">Ooops! Please write a nice title for your post &gt;.&lt;</div>
             </div>
 
             <div class="form-group">
               <label for="postAuthor">Author</label>
-              <input type="text" class="form-control" id="postAuthor" placeholder="Eg: David Thompson">
+              <input required type="text" class="form-control" id="postAuthor" placeholder="Eg: David Thompson">
               <div class="invalid-feedback">Please enter author of this post!</div>
             </div>
 
@@ -90,7 +90,7 @@
             </div>
 
             <div class="text-center">
-              <button class="btn btn-primary"><i class="fas fa-save mr-1"></i> Save</button>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-save mr-1"></i> Save</button>
             </div>
           </form>
         </div>
@@ -99,7 +99,7 @@
   </main>
 
   <footer class="text-center text-muted py-3">
-    <small> From person who <i class="fas fa-heart"></i> foods </small>
+    <small> Send <i class="fas fa-heart"></i> to your beautiful world </small>
   </footer>
 
 

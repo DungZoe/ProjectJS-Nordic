@@ -1,4 +1,10 @@
+/* pagination */
 
+.pagination {
+  justify-content: center;
+}
+
+/* ---------- */
 .posts-section {
   padding: 3rem 0;
 }

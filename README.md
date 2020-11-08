@@ -176,5 +176,4 @@ DELETE /posts/:postId
 - Integrate with `Lightbox` to view image when click on image.
 
 
-Good luck everyone! :heart_eyes:
-> Created by Po with :heart:
+> This file is written by Mr. Hau Nguyen, a lecturer of Front End class at Nordic Coder School.
