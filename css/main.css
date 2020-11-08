@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+/* Loading icon */
+/* button#spinner {
+  align-items: center;
+  justify-content: center;
+} */
+
 body {
   /* Make footer always at bottom of our screen */
   display: flex;

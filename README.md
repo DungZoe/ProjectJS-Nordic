@@ -176,4 +176,4 @@ DELETE /posts/:postId
 - Integrate with `Lightbox` to view image when click on image.
 
 
-> This file is written by Mr. Hau Nguyen, a lecturer of Front End class at Nordic Coder School.
+> The instruction is written by Mr. Hau Nguyen, a lecturer of Front End class at Nordic Coder School.

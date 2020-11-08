@@ -5,7 +5,7 @@
 // start = (currentPage - 1) * itemPerPage;
 //end = currentPage * itemPerPage;
 
-let itemPerPage = 6;
-let currentPage = 1;
-let start = 0;
-let end = itemPerpage;
+// let itemPerPage = 6;
+// let currentPage = 1;
+// let start = 0;
+// let end = itemPerpage;

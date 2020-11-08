@@ -111,13 +111,30 @@ const handleFormSubmit = async (postId) => {
     if (!isValid) return;
     try {
         if (postId) {
+
+            const savePostButtonElement = document.querySelector('#savePostButton');
+            savePostButtonElement.innerHTML =
+                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...';
+            savePostButtonElement.disabled = true;
+
             formValues.id = postId;
-            await postApi.update(formValues);
+            const updatePost = await postApi.update(formValues);
+            alert('Congrats! Your post is saved.')
+            window.location = `./post-detail.html?id=${updatePost.id}`;
+
         } else {
-            await postApi.add(formValues);
+
+            const savePostButtonElement = document.querySelector('#savePostButton');
+            savePostButtonElement.innerHTML =
+                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...';
+            savePostButtonElement.disabled = true;
+
+            const addNewPost = await postApi.add(formValues);
+            alert('Your post is added. Share it to your friends now.');
+            window.location = `./post-detail.html?id=${addNewPost.id}`;
         }
     } catch (error) {
-        console.log("Updating data is error", error);
+        console.log("Fail in updating data", error);
     }
 };
 
@@ -129,14 +146,15 @@ const handleFormSubmit = async (postId) => {
     const isEditMode = !!postId;
 
     if (isEditMode) {
-        try {
-            const post = await postApi.get(postId);
-            // console.log(post);
+        const post = await postApi.get(postId);
+        // console.log(post);
 
-            setFormValues(post);
-        } catch (error) {
-            console.log(error);
-        }
+        setFormValues(post);
+
+        const goToDetailPageLink = document.querySelector('#goToDetailPageLink');
+        goToDetailPageLink.href = `./post-detail.html?id=${post.id}`;
+        goToDetailPageLink.innerHTML = '<i class="fas fa-eye mr-1"></i> View post detail';
+
     } else {
         handleChangeImageClick();
     }
