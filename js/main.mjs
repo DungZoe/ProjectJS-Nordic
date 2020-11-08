@@ -79,7 +79,7 @@ const renderpostList = (postList) => {
                 e.stopPropagation();
 
                 // Ask user whether they want to delete
-                const message = `Are you sure to permanent delete post ${post.title} written by ${post.author}?`;
+                const message = `Are you sure to permanent delete post "${post.title}" written by ${post.author}?`;
                 if (window.confirm(message)) {
                     try {
                         await postApi.remove(post.id);
@@ -129,6 +129,8 @@ const renderPostsPagination = (pagination) => {
         const pageList = getPageList(pagination);
         const { _page, _limit } = pagination;
         const pageItems = postPagination.querySelectorAll('.page-item');
+
+        //Check number of items
         if (pageItems.length === 5) {
             pageItems.forEach((item, idx) => {
                 if (pageList[idx] === -1) {
@@ -176,8 +178,9 @@ const renderPostsPagination = (pagination) => {
         // hide loading
         const spinnerElement = document.querySelector("#spinner");
         spinnerElement.style.display = 'none';
+
         // render
-      } catch (error) {
+    } catch (error) {
         console.log('Failed to fetch post list', error);
     }
 })();

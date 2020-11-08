@@ -67,7 +67,7 @@ const main = async () => {
     const post = await postApi.get(postId);
 
     // 3. Render
-    renderpost(post);
+    renderPost(post);
 
     // 4. Bind edit link
     const editLinkElement = document.querySelector("#editLink");

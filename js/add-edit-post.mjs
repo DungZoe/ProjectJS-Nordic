@@ -114,7 +114,7 @@ const handleFormSubmit = async (postId) => {
 
             const savePostButtonElement = document.querySelector('#savePostButton');
             savePostButtonElement.innerHTML =
-                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...';
+                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Searching the way to your heart...';
             savePostButtonElement.disabled = true;
 
             formValues.id = postId;
@@ -126,7 +126,7 @@ const handleFormSubmit = async (postId) => {
 
             const savePostButtonElement = document.querySelector('#savePostButton');
             savePostButtonElement.innerHTML =
-                '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...';
+            '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Searching the way to your heart...';
             savePostButtonElement.disabled = true;
 
             const addNewPost = await postApi.add(formValues);
