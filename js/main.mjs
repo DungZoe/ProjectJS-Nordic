@@ -14,7 +14,7 @@ const renderpostList = (postList) => {
         // Clone li
         const liElementFromTemplate = templateElement.content.querySelector("li");
         const newLiElement = liElementFromTemplate.cloneNode(true);
-        // console.log(newLiElement);
+        console.log(newLiElement);
 
         // ----- Fill data ----- 
         // set title
@@ -167,17 +167,28 @@ const renderPostsPagination = (pagination) => {
 (async function () {
     try {
 
-        const params = { _page: 1, _limit: 6 };
+        const urlParam = new URLSearchParams(window.location.search);
+        const page = urlParam.get('_page');
+        const limit = urlParam.get('_limit');
+        const params = {
+            _page: page || AppConstants.DEFAULT_PAGE,
+            _limit: limit || AppConstants.DEFAULT_LIMIT,
+            _sort: 'updatedAt',
+            _order: 'desc',
+        };
 
         //Page button
         const response = await postApi.getAll(params);
         const postList = response.data;
 
         renderpostList(postList);
+        renderPostsPagination(response.pagination);
 
         // hide loading
         const spinnerElement = document.querySelector("#spinner");
-        spinnerElement.style.display = 'none';
+        if (spinnerElement) {
+            spinnerElement.setAttribute('hidden', '');
+        }
 
         // render
     } catch (error) {
